@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="Dcss" />
+<meta name="keywords" content="Dcss"/>
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="X-UA-Compatible" content="edge" />
+<title>Dcss</title>
+
+</head>
+
+<body>
+
+	<div class="playground">
+		<div class="cube-box">
+			<ul id="cube" class="cube">
+				<li class="front"><img src="http://g.hiphotos.baidu.com/image/pic/item/30adcbef76094b369a161391a1cc7cd98c109dc1.jpg"/></li>
+				<li class="back"><img src="http://d.hiphotos.baidu.com/image/pic/item/e1fe9925bc315c601ff930e68fb1cb134954774e.jpg"/></li>
+				<li class="right"><img src="http://f.hiphotos.baidu.com/image/pic/item/9213b07eca806538a140297594dda144ad34822a.jpg"/></li>
+				<li class="left"><img src="http://d.hiphotos.baidu.com/image/pic/item/7af40ad162d9f2d3fc8d6a1aa9ec8a136227cca3.jpg"/></li>
+				<li class="top"><img src="http://e.hiphotos.baidu.com/image/pic/item/9922720e0cf3d7caefd9a052f11fbe096b63a9e3.jpg"/></li>
+				<li class="bottom"><img src="http://e.hiphotos.baidu.com/image/pic/item/fd039245d688d43f83eb6c867e1ed21b0ef43b07.jpg"/></li>
+			</ul>
+		</div>
+		
+		<button id="front-face">前</button>
+		<button id="back-face">后</button>
+		<button id="left-face">左</button>
+		<button id="right-face">右</button>
+		<button id="top-face">上</button>
+		<button id="bottom-face">下</button>
+		<button id="set-width">重设宽度</button>
+	</div>
+
+
+<script src="../dcss.js"></script>
+<script type="text/javascript">
+	var dcss = Dcss.load({
+		width: '500px',
+		height: '300px',
+		depth: '400px'
+	}, '/js/project/dcss/box.dcss');
+	
+	$('#set-width').click(function(){
+		//更新
+		dcss.update({
+			width: '400px'
+		});
+	});
+	
+	$('#front-face').click(function(){$('#cube').addClass('show-front');});
+	$('#back-face').click(function(){$('#cube').addClass('show-back');});
+	$('#left-face').click(function(){$('#cube').addClass('show-left');});
+	$('#right-face').click(function(){$('#cube').addClass('show-right');});
+	$('#top-face').click(function(){$('#cube').addClass('show-top');});
+	$('#bottom-face').click(function(){$('#cube').addClass('show-bottom');});
+</script>
+
+</body>
